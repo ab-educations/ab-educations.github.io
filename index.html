@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>सुवर्ण महोत्सवी आदिवासी पूर्व माध्यमिक शिष्यवृत्ती - अर्ज फॉर्म</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Marathi&family=Mukta:wght@500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="guide no-print">
+    <strong>शिक्षकांसाठी सूचना :</strong>
+    माहिती फक्त तुमच्या फोन / कॉम्प्युटरवर जतन होते. अर्ज आपोआप विशाल सरांकडे जात नाही.
+    <ol>
+      <li>खालील फॉर्म भरा व विद्यार्थ्याचा फोटो टाका.</li>
+      <li><b>जतन करा</b> दाबा (नंतर पुन्हा उघडता येईल).</li>
+      <li><b>PDF डाउनलोड</b> दाबा — फाइल सेव्ह होईल.</li>
+      <li>तो PDF WhatsApp / ईमेलने विशाल सरांकडे पाठवा.</li>
+    </ol>
+  </div>
+
+  <div class="toolbar">
+    <h1>सुवर्ण महोत्सवी आदिवासी पूर्व माध्यमिक शिष्यवृत्ती — अर्ज फॉर्म</h1>
+    <div class="row">
+      <select id="savedSelect"><option value="">— जतन केलेले अर्ज —</option></select>
+      <button type="button" class="secondary" id="loadBtn">उघडा</button>
+      <button type="button" class="danger" id="deleteBtn">काढून टाका</button>
+    </div>
+    <div class="row">
+      <button type="button" class="secondary" id="newBtn">नवीन अर्ज</button>
+      <button type="button" id="editSaveBtn">जतन करा</button>
+      <button type="button" id="pdfBtn">PDF डाउनलोड</button>
+      <button type="button" class="secondary" id="printBtn">प्रिंट करा</button>
+      <button type="button" class="whatsapp" id="waBtn">WhatsApp संदेश</button>
+    </div>
+  </div>
+  <div id="statusMsg"></div>
+
+  <form class="sheet" id="arjForm" onsubmit="return false;">
+    <p class="gr-line">शासन निर्णय क्र. आदिशी - २००९ / प्र. क्र. २०/ का. १२. दि. ३१ मे २०१० सोबतचे प्रपत्र</p>
+    <p class="gr-title mukta">परिशिष्ट - ब</p>
+    <p class="gr-line mukta" style="font-size:14.5px;">अर्जाचा नमुना</p>
+
+    <div class="scheme-row">
+      <div class="scheme-title">सुवर्ण महोत्सवी आदिवासी पूर्व माध्यमिक शिष्यवृत्ती योजना<br><span class="scheme-year">शैक्षणिक वर्ष २०२५-२६</span></div>
+      <div>
+        <div class="photo-box" id="photoBox">फोटो</div>
+        <div class="photo-upload"><input type="file" id="photoInput" accept="image/*"></div>
+      </div>
+    </div>
+
+    <p class="note-line">(अर्जासोबत विद्यार्थ्यांचा जातीचा दाखला, आई व वडिलांचा उत्पन्नाचा दाखला यांच्या सत्यप्रती जोडाव्यात. वडील हयात नसल्यास त्यांच्या मृत्यूचा दाखला जोडावा. आई व वडील दोघेही हयात नसल्यास पालकांबाबत सविस्तर माहिती अनुक्रमांक ३ येथे नमूद करावी.)</p>
+
+    <section>
+      <div class="field-row">
+        <span class="flabel mukta">१. शाळेचे नाव व पत्ता : -</span>
+        <input class="fill" id="schoolAddr" placeholder="शाळेचे संपूर्ण नाव व पत्ता">
+      </div>
+      <div class="field-row">
+        <span class="flabel mukta">अर्ज दिनांक : -</span>
+        <input class="fill" type="date" id="arjDate" style="flex:0 0 auto;min-width:150px;">
+        <span class="print-date" id="arjDatePrint"></span>
+      </div>
+    </section>
+
+    <section>
+      <div class="sec-head">२. विद्यार्थ्यांची माहिती : -</div>
+
+      <div class="field-row indent"><span class="flabel">१) विद्यार्थ्यांचे पूर्ण नाव (शालेय अभिलेखानुसार) : -</span>
+        <input class="fill" id="studFullName"></div>
+      <div class="field-row indent"><span class="flabel">२) वर्ग : इयत्ता : -</span>
+        <select class="fill" id="classGrade">
+          <option value="">-- निवडा --</option>
+          <option value="पहिली (१ ली)">पहिली (१ ली)</option>
+          <option value="दुसरी (२ री)">दुसरी (२ री)</option>
+          <option value="तिसरी (३ री)">तिसरी (३ री)</option>
+          <option value="चौथी (४ थी)">चौथी (४ थी)</option>
+        </select></div>
+      <div class="field-row indent"><span class="flabel">३) आईचे नाव : -</span>
+        <input class="fill" id="s2MotherName"></div>
+      <div class="field-row indent"><span class="flabel">४) वडिलांचे नाव : -</span>
+        <input class="fill" id="s2FatherName"></div>
+      <div class="field-row indent"><span class="flabel">५) आई वडिलांचा कायमचा पूर्ण पत्ता : -</span>
+        <input class="fill" id="permAddr"></div>
+      <div class="field-row indent"><span class="flabel">६) आई वडिलांचा सध्याचा पूर्ण पत्ता (पत्रव्यवहारासाठी) : -</span>
+        <input class="fill" id="currAddr"></div>
+      <div class="field-row indent"><span class="flabel">७) विद्यार्थ्यांची जन्म तारीख : -</span>
+        <input class="fill" type="date" id="dobDate" style="flex:0 0 auto;min-width:150px;">
+        <span class="print-date" id="dobDatePrint"></span>
+        <span class="flabel" style="margin-left:14px;">वय : -</span>
+        <input class="fill" id="ageDisplay" readonly style="flex:0 0 auto;min-width:90px;" placeholder="आपोआप">
+      </div>
+      <div class="field-row indent"><span class="flabel">८) लिंग : -</span>
+        <select class="fill" id="gender">
+          <option value="">-- निवडा --</option>
+          <option value="स्त्री">स्त्री</option>
+          <option value="पुरुष">पुरुष</option>
+        </select></div>
+      <div class="field-row indent"><span class="flabel">९) मागील वर्षी शिकत असलेली शाळा : -</span>
+        <select class="fill" id="prevSchoolType" style="flex:0 0 auto;min-width:260px;">
+          <option value="same">नवीन प्राथमिक शाळा, भुईकोट किल्ला, मालेगाव</option>
+          <option value="new1">नवीन प्रवेश (इयत्ता १ ली)</option>
+          <option value="new2to4">नवीन प्रवेश (इयत्ता २ री ते ४ थी — अन्य शाळेतून)</option>
+        </select>
+      </div>
+      <div class="field-row indent" id="prevSchoolOtherRow">
+        <span class="flabel">&nbsp;&nbsp;&nbsp;मागील शाळेचे नाव : -</span>
+        <input class="fill" id="prevSchoolOther" placeholder="अन्य शाळेचे नाव व गाव">
+      </div>
+      <div class="field-row indent"><span class="flabel">१०) मागील वर्षी मिळालेल्या शिष्यवृत्तीची सविस्तर माहिती : -</span>
+        <input class="fill" id="prevScholarship"></div>
+      <div class="field-row indent"><span class="flabel">११) जात : -</span>
+        <input class="fill" id="caste"></div>
+      <div class="field-row indent"><span class="flabel">१२) सर्वसाधारण नोंद वही (जी.आर.) क्रमांक : -</span>
+        <input class="fill" id="grNumber"></div>
+      <div class="field-row indent"><span class="flabel">१३) आधार क्रमांक : -</span>
+        <input class="fill" id="aadhaar" maxlength="14" placeholder="१२ अंकी क्रमांक"></div>
+    </section>
+
+    <section>
+      <div class="sec-head">३. आई / वडिलांची माहिती : -</div>
+
+      <div class="field-row indent"><span class="flabel">१) आईचे नाव : -</span>
+        <input class="fill" id="s3MotherName"></div>
+      <div class="field-row indent"><span class="flabel">२) वडिलांचे नाव : -</span>
+        <input class="fill" id="s3FatherName"></div>
+      <div class="field-row indent"><span class="flabel">३) वडिलांचा व्यवसाय : -</span>
+        <input class="fill" id="fatherOccupation"></div>
+      <div class="field-row indent"><span class="flabel">४) कुटुंबाचे एकूण वार्षिक उत्पन्न : -</span>
+        <input class="fill" id="totalIncome"></div>
+      <div class="field-row indent2"><span class="flabel">अ) नोकरीतून मिळणारे एकूण वार्षिक उत्पन्न (मूळ वेतन + सर्व भत्ते) : -</span>
+        <input class="fill" id="jobIncome"></div>
+      <div class="field-row indent2"><span class="flabel">ब) अन्य मार्गाने मिळणारे वार्षिक उत्पन्न : -</span>
+        <input class="fill" id="otherIncome"></div>
+      <div class="field-row indent"><span class="flabel">५) आई / वडिलांचे खाते असलेल्या राष्ट्रीयीकृत बँकेचे नाव : -</span>
+        <input class="fill" id="bankName"></div>
+      <div class="field-row indent2"><span class="flabel">शाखा : -</span>
+        <input class="fill" id="branch"></div>
+      <div class="field-row indent2"><span class="flabel">खाते क्रमांक : -</span>
+        <input class="fill" id="accountNumber"></div>
+
+      <p class="guardian-note">* वडील हयात नसल्यास आईची माहिती भरावी. आई व वडील हयात नसल्यास ज्या पालकावर विद्यार्थी अवलंबून आहे त्याची माहिती भरावी.</p>
+    </section>
+
+    <div class="hamipatra">
+      <h3 class="mukta">हमीपत्र</h3>
+      <p>मी/आम्ही खाली सही करणार / करणारे प्रतिज्ञापत्र करतो / करते की, सुवर्ण महोत्सवी आदिवासी पूर्व माध्यमिक शिष्यवृत्ती मिळविण्यासाठी अटी व शर्ती मला / आम्हास मान्य आहेत. अर्जात वरीलप्रमाणे दिलेली सर्व माहिती पूर्णपणे सत्य आहे. सदरची माहिती खोटी अथवा अपुरी आढळल्यास भारतीय दंड विधान नियम १९९ व २०० तसेच इतर नियम आणि कायद्याप्रमाणे होणाऱ्या दंडास / शिक्षेस मी / आम्ही पात्र राहीन / राहू. मी / आम्ही दिलेली कोणतीही माहिती या निवेदनात चुकीची आढळून आल्यास सक्षम प्राधिकाऱ्याने दिलेला निर्णय अंतिम असेल व ती माझ्यावर / आम्हांवर बंधनकारक असेल अशी मी / आम्ही हमी देतो / देते. जर शिष्यवृत्तीची रक्कम जास्तीची मिळाली तर ती मी / आम्ही परत करणे / करू. अशी जास्तीची अथवा अन्य कारणांमुळे वसूल करण्यात येणारी रक्कम मी / आम्ही पूर्णपणे परत करण्याची हमी देतो / देते. आमचे उत्पन्नाचे व जातीची माहिती खोटी आढळल्यास होणाऱ्या कारवाईस मी / आम्ही स्वतः जबाबदार राहू.</p>
+
+      <div class="sign-row">
+        <div class="sign-col"><div class="line"></div>अर्जदाराच्या आई / वडिलांची सही /-</div>
+        <div class="sign-col"><div class="line"></div>विद्यार्थी / विद्यार्थिनीची सही /-</div>
+      </div>
+      <p class="guardian-sign">आई / वडील हयात नसल्यास पालकांची सही व अर्जदाराशी नाते : -</p>
+    </div>
+
+    <div class="school-part">
+      <h3 class="mukta">शाळेने भरावयाची माहिती</h3>
+      <p>अर्जदाराने वरील अर्जात दिलेली सर्व माहिती, त्यांच्या कुटुंबाचे सर्व मार्गाने मिळणारे वार्षिक उत्पन्न, शैक्षणिक माहिती पूर्णपणे तपासलेली असून ती बरोबर आहे. तसेच शासन निर्णय क्र. आदिशी २००९ / प्र.क्र.२०/का.१२ दिनांक ३१ मे २०१० मधील नमूद सर्व अटी व शर्तींची पूर्तता होत असल्याने सदर विद्यार्थ्याला / विद्यार्थिनीला शिष्यवृत्ती देण्यास शिफारस करण्यात येत आहे.</p>
+      <div class="field-row">
+        <span class="flabel">अर्ज भरणाऱ्या शिक्षकाचे नाव : -</span>
+        <input class="fill" id="teacherName" placeholder="शिक्षकाचे पूर्ण नाव">
+      </div>
+      <div class="field-row">
+        <span class="flabel">शिक्षकाचा मोबाइल : -</span>
+        <input class="fill" id="teacherMobile" placeholder="१० अंकी क्रमांक" maxlength="12">
+      </div>
+      <div class="hm-sign">
+        <div>मुख्याध्यापक / मुख्याध्यापिका यांची सही /- ______________________</div>
+        <div>नाव व पदनाम : - ______________________</div>
+      </div>
+      <div class="seal-box">शाळेचा शिक्का</div>
+    </div>
+
+    <p class="credit">श्रेय : श्री. विशाल सुशिला यशवंत बोरसे, AB Educations, मालेगाव, जि. नाशिक.</p>
+  </form>
+
+<script src="app.js"></script>
+</body>
+</html>
