@@ -1,2 +1,7 @@
-# ab-educations.github.io
-AB Educations — शैक्षणिक फॉर्म आणि साधने
+# AB Educations
+
+शैक्षकांसाठी लिंक — सुवर्ण महोत्सवी आदिवासी पूर्व माध्यमिक शिष्यवृत्ती अर्ज फॉर्म
+
+**लिंक:** https://ab-educations.github.io/
+
+फॉर्म भरा, PDF डाउनलोड करा आणि विशाल सरांकडे WhatsApp ने पाठवा.
